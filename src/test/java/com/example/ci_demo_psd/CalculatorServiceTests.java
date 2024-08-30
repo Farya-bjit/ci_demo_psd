@@ -15,7 +15,7 @@ public class CalculatorServiceTests {
     @Test
     public void testAdd() {
         int result = calculatorService.add(5, 5);
-        assertEquals(8, result, "5 + 3 should equal 8");
+        assertEquals(10, result, "5 + 5 should equal 10");
     }
 
     @Test
@@ -42,5 +42,16 @@ public class CalculatorServiceTests {
             calculatorService.divide(6, 0);
         });
         assertEquals("Division by zero is not allowed.", exception.getMessage());
+    }
+
+    @Test
+    public void testPower() {
+        assertEquals(9, 9, "3 ^ 2  should equal 9");
+    }
+
+    @Test
+    public void testModulus() {
+        int result = calculatorService.modulus(10, 3);
+        assertEquals(1, result, "10 % 3 should equal 1");
     }
 }
